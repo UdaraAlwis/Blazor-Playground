@@ -1,0 +1,63 @@
+@page "/fetchdata"
+@inject HttpClient Http
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+@if (forecasts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Temp. (C)</th>
+                <th>Temp. (F)</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in forecasts)
+            {
+                <tr>
+                    <td>@forecast.Date.ToShortDateString()</td>
+                    <td>@forecast.TemperatureC</td>
+                    <td>@forecast.TemperatureF</td>
+                    <td>@forecast.Summary</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private WeatherForecast[] forecasts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+
+        var results = await Http.GetAsync("sample-data/weather.json");
+        var resultsString = await results.Content.ReadAsStringAsync();
+        var resultsJson = System.Text.Json.JsonSerializer.Deserialize<WeatherForecast[]>(resultsString);
+        forecasts = resultsJson;
+    }
+
+    public class WeatherForecast
+    {
+        [System.Text.Json.Serialization.JsonPropertyName("date")]
+        public DateTime Date { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("temperatureC")]
+        public int TemperatureC { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("summary")]
+        public string Summary { get; set; }
+
+        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    }
+}
