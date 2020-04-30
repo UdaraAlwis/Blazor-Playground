@@ -1,0 +1,51 @@
+﻿@page "/todo"
+@using BlazorTodoApp.Shared
+
+<h3>Todo (@todoItems.Count(todo => !todo.IsDone))</h3>
+
+<div class="card" style="margin-bottom: 15px;">
+    <div class="card-header">
+        Add your todo
+    </div>
+    <div class="card-body">
+        <form class="form-inline">
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="text" class="form-control" placeholder="Something todo" @bind="newTodo">
+            </div>
+            <button type="button" class="btn btn-primary mb-2" @onclick="AddTodo">Add todo</button>
+        </form>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        Check your todo
+    </div>
+    <div class="card-body">
+        @foreach (var todoItem in todoItems)
+        {
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <input type="checkbox" aria-label="Checkbox for following text input" @bind="todoItem.IsDone">
+                    </div>
+                </div>
+                <input type="text" class="form-control" aria-label="Text input with checkbox" @bind="todoItem.Title">
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    private IList<TodoItem> todoItems = new List<TodoItem>();
+    private string newTodo;
+
+    private void AddTodo()
+    {
+        if (!string.IsNullOrWhiteSpace(newTodo))
+        {
+            todoItems.Add(new TodoItem() { Title = newTodo, IsDone = false });
+            newTodo = string.Empty;
+        }
+    }
+}
