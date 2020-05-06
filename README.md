@@ -13,6 +13,10 @@ https://docs.microsoft.com/en-us/aspnet/core/tutorials/build-your-first-blazor-a
 https://www.youtube.com/watch?v=CaxR4_fP-FA
 > Project /BlazorPersonApp
 
+#### Intro to Blazor Server Side - Includes SQL Data Access and Best Practices
+https://www.youtube.com/watch?v=8DNgdphLvag
+> Project /BlazorServerApp
+
 #### Blazor - app building workshop
 https://github.com/dotnet-presentations/blazor-workshop/
 
