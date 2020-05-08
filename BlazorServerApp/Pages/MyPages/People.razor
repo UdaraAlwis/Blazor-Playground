@@ -1,0 +1,19 @@
+﻿@page "/data/people"
+
+@using DataAccessLibrary
+@using DataAccessLibrary.Models
+
+@inject IPeopleData _peopleData
+
+<h3>People Page</h3>
+
+<h4>Current People</h4>
+
+@code {
+    private List<Person> people;
+
+    protected override async Task OnInitializedAsync()
+    {
+        people = await _peopleData.GetPeople();
+    }
+}
