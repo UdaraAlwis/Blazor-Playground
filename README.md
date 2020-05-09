@@ -5,7 +5,7 @@ Me myself and I playing around with Blazor tid bits...
 https://docs.microsoft.com/en-us/aspnet/core/blazor/get-started?view=aspnetcore-3.1&tabs=visual-studio
 > Project /BlazorClientApp
 
-![BlazorClientApp Screenshot](https://github.com/UdaraAlwis/Blazor-Playground/blob/master/Screenshots/BlazorClientApp/Finished.png)
+![BlazorClientApp Screenshot](https://raw.githubusercontent.com/UdaraAlwis/Blazor-Playground/blob/master/Screenshots/BlazorClientApp/Finished.png)
 
 #### Notes:
 1. Splitting Counter.razor file with the Counter.razor.cs code behind implementation. 
@@ -40,7 +40,7 @@ https://www.youtube.com/watch?v=CaxR4_fP-FA
 https://www.youtube.com/watch?v=8DNgdphLvag
 > Project /BlazorServerApp
 
-![BlazorServerApp Screenshot](https://github.com/UdaraAlwis/Blazor-Playground/blob/master/Screenshots/BlazorServerApp/Finished.png)
+![BlazorServerApp Screenshot](https://raw.githubusercontent.com/UdaraAlwis/Blazor-Playground/master/Screenshots/BlazorServerApp/Finished.png)
 
 ![BlazorServerApp Database Set up](https://raw.githubusercontent.com/UdaraAlwis/Blazor-Playground/master/Screenshots/BlazorServerApp/Database%20set%20up.png)
 
