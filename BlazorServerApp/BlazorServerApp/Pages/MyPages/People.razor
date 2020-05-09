@@ -9,15 +9,27 @@
 <h3>People Page</h3>
 
 <h4>Insert New Person</h4>
-<EditForm Model="@_newPerson" OnValidSubmit="InsertPerson">
+<EditForm class="form-group" Model="@_newPerson" OnValidSubmit="InsertPerson">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
-    <InputText id="firstName" @bind-Value="_newPerson.FirstName" />
-    <InputText id="lastName" @bind-Value="_newPerson.LastName" />
-    <InputText id="emailAddress" @bind-Value="_newPerson.EmailAddress" />
+    <div class="form-row">
+        <div class="col">
+            <InputText class="form-control" placeholder="First Name" id="firstName" @bind-Value="_newPerson.FirstName" />
+        </div>
+        <div class="col">
+            <InputText class="form-control" placeholder="Last Name" id="lastName" @bind-Value="_newPerson.LastName" />
+        </div>
+        <div class="col">
+            <InputText class="form-control" placeholder="E-Mail Address" id="emailAddress" @bind-Value="_newPerson.EmailAddress" />
+        </div>
+    </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="form-row">
+        <div class="col">
+            <button type="submit" class="btn btn-primary mt-2">Submit</button>
+        </div>
+    </div>
 </EditForm>
 
 <h4>Current People</h4>
