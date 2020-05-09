@@ -4,6 +4,20 @@ Me myself and I playing around with Blazor tid bits...
 ### Get started with ASP.NET Core Blazor
 https://docs.microsoft.com/en-us/aspnet/core/blazor/get-started?view=aspnetcore-3.1&tabs=visual-studio
 > Project /BlazorClientApp
+#### Notes:
+1. Splitting Counter.razor file with the Counter.razor.cs code behind implementation. 
+```csharp
+public class CounterBase : ComponentBase
+{
+	[Parameter]
+	public int CurrentCount { get; set; } = 0;
+
+	public void IncrementCount(){ ... }
+}
+```
+1. Extending from ComponentBase and inherited ```@inherits CounterBase``` into Counter.razor page
+1. Added Counter.razor as a Component into the Index.razor page
+1. Switched from HttpClient.GetFromJsonAsync() to HttpClient.GetAsync() with the use of System.Text.Json.JsonSerializer
 
 -----------------
 

@@ -4,7 +4,8 @@ namespace BlazorClientApp.Pages
 {
     public class CounterBase : ComponentBase
     {
-        public int CurrentCount = 0;
+        [Parameter]
+        public int CurrentCount { get; set; } = 0;
 
         public void IncrementCount()
         {
