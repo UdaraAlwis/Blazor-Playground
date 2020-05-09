@@ -18,10 +18,10 @@ public class CounterBase : ComponentBase
 	public void IncrementCount(){ ... }
 }
 ```
-1. Extending from ComponentBase and inherited ```@inherits CounterBase``` into Counter.razor page
-1. Added Counter.razor as a Component into the Index.razor page
-1. Switched from HttpClient.GetFromJsonAsync() to HttpClient.GetAsync() with the use of System.Text.Json.JsonSerializer
-1. Blazor Client renders content in Client's Web Browser
+2. Extending from ComponentBase and inherited ```@inherits CounterBase``` into Counter.razor page
+3. Added Counter.razor as a Component into the Index.razor page
+4. Switched from HttpClient.GetFromJsonAsync() to HttpClient.GetAsync() with the use of System.Text.Json.JsonSerializer
+5. Blazor Client renders content in Client's Web Browser
 
 -----------------
 
@@ -39,8 +39,8 @@ https://www.youtube.com/watch?v=CaxR4_fP-FA
 
 #### Notes:
 1. ASP.NET Hosted Blazor Client App solution was created.
-1. Added a PersonController API endpoint in the BlazorPersonApp.Server project
-1. Implemented Get and Post endpoints in the PersonController and implemented calls to pull data for the Client App
+2. Added a PersonController API endpoint in the BlazorPersonApp.Server project
+3. Implemented Get and Post endpoints in the PersonController and implemented calls to pull data for the Client App
 
 -----------------
 
@@ -60,7 +60,7 @@ https://www.youtube.com/watch?v=8DNgdphLvag
 id="firstName" @bind-Value="_newPerson.FirstName" />
 ...
 ```
-1. Make sure to create a local Database and set up the following table
+2. Make sure to create a local Database and set up the following table
 ```sql
 CREATE TABLE [dbo].[People] (
     [Id]           INT          IDENTITY (1, 1) NOT NULL,
@@ -71,8 +71,8 @@ CREATE TABLE [dbo].[People] (
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 ```
-1. Blazor Server renders content in Server, and uses SignalR WebSockets to transfer data back and forth
-1. How to identify Blazor Server project? in the Startup.cs look for ```services.AddServerSideBlazor();```
+3. Blazor Server renders content in Server, and uses SignalR WebSockets to transfer data back and forth
+4. How to identify Blazor Server project? in the Startup.cs look for ```services.AddServerSideBlazor();```
     
 -----------------
 
