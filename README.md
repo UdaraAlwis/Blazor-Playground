@@ -1,5 +1,5 @@
 # Blazor-Playground
-Me myself and I playing around and continusouly learning with Blazor tid bits...
+Me, myself and I playing around and continusouly learning with Blazor tid bits...
 
 ### Get started with ASP.NET Core Blazor
 https://docs.microsoft.com/en-us/aspnet/core/blazor/get-started?view=aspnetcore-3.1&tabs=visual-studio
@@ -20,7 +20,7 @@ public class CounterBase : ComponentBase
 ```
 2. Extending from ComponentBase and inherited ```@inherits CounterBase``` into Counter.razor page
 3. Added Counter.razor as a Component into the Index.razor page
-4. Switched from HttpClient.GetFromJsonAsync() to HttpClient.GetAsync() with the use of System.Text.Json.JsonSerializer
+4. Switched from ```HttpClient.GetFromJsonAsync()``` to ```HttpClient.GetAsync()``` with the use of System.Text.Json.JsonSerializer
 5. Blazor Client renders content in Client's Web Browser
 
 -----------------
@@ -29,6 +29,12 @@ public class CounterBase : ComponentBase
 https://docs.microsoft.com/en-us/aspnet/core/tutorials/build-your-first-blazor-app?view=aspnetcore-3.1
 > Project /BlazorTodoApp
 
+![BlazorPersonApp Screenshot](https://raw.githubusercontent.com/UdaraAlwis/Blazor-Playground/master/Screenshots/BlazorTodoApp/Finished.png)
+
+#### Notes:
+1. In-Memory todo list created in Todo.razor page
+2. Adding the Navigation path in NavMenu.razor
+3. Data binding with ```@bind="newTodo"``` across web UI elements
 -----------------
 
 ### Intro to Blazor (Preview 7) - Replace JavaScript with client-side C#
@@ -39,7 +45,7 @@ https://www.youtube.com/watch?v=CaxR4_fP-FA
 
 #### Notes:
 1. ASP.NET Hosted Blazor Client App solution was created.
-2. Added a PersonController API endpoint in the BlazorPersonApp.Server project
+2. Added a ```PersonController``` API endpoint in the BlazorPersonApp.Server project
 3. Implemented Get and Post endpoints in the PersonController and implemented calls to pull data for the Client App
 
 -----------------
@@ -76,6 +82,14 @@ CREATE TABLE [dbo].[People] (
     
 -----------------
 
+### Blazor Server Components - Making Razor Components Easy to Use
+https://www.youtube.com/watch?v=JE0tQ4tx0Nc
+> pending...
+
+-----------------
+
 ### Blazor - app building workshop
 https://github.com/dotnet-presentations/blazor-workshop/
+> pending...
+
 
