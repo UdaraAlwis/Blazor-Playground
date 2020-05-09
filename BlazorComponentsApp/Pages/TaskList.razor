@@ -1,0 +1,31 @@
+﻿@page "/tasklist"
+
+<h3>TaskList</h3>
+
+<EditForm Model="@newTaskItem" OnValidSubmit="@AddNewTask" >
+
+    <input type="text" @bind-value="newTaskItem.TaskTitle" />
+
+    <button type="submit" >Add Task</button>
+
+</EditForm>
+
+<ul>
+    @foreach (var task in taskItemList)
+    {
+        <li>@task.TaskTitle</li>
+    }
+</ul>
+
+@code {
+
+    private List<TaskItem> taskItemList = new List<TaskItem>();
+    private TaskItem newTaskItem = new TaskItem();
+
+    private void AddNewTask() 
+    {
+        taskItemList.Add(newTaskItem);
+
+        newTaskItem = new TaskItem();
+    }
+}

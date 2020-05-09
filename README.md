@@ -35,6 +35,8 @@ https://docs.microsoft.com/en-us/aspnet/core/tutorials/build-your-first-blazor-a
 1. In-Memory todo list created in Todo.razor page
 2. Adding the Navigation path in NavMenu.razor
 3. Data binding with ```@bind="newTodo"``` across web UI elements
+4. Adding Bootstrap css decorations for the elements
+
 -----------------
 
 ### Intro to Blazor (Preview 7) - Replace JavaScript with client-side C#
@@ -66,7 +68,15 @@ https://www.youtube.com/watch?v=8DNgdphLvag
 id="firstName" @bind-Value="_newPerson.FirstName" />
 ...
 ```
-2. Make sure to create a local Database and set up the following table
+2. Using ```EditForm``` Component with ```DataAnnotationsValidator``` for validating data model
+```html
+<EditForm class="form-group" Model="@_newPerson" OnValidSubmit="InsertPerson">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+	...
+<EditForm>
+```
+3. Make sure to create a local Database and set up the following table
 ```sql
 CREATE TABLE [dbo].[People] (
     [Id]           INT          IDENTITY (1, 1) NOT NULL,
@@ -77,8 +87,8 @@ CREATE TABLE [dbo].[People] (
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 ```
-3. Blazor Server renders content in Server, and uses SignalR WebSockets to transfer data back and forth
-4. How to identify Blazor Server project? in the Startup.cs look for ```services.AddServerSideBlazor();```
+4. Blazor Server renders content in Server, and uses SignalR WebSockets to transfer data back and forth
+5. How to identify Blazor Server project? in the Startup.cs look for ```services.AddServerSideBlazor();```
     
 -----------------
 
