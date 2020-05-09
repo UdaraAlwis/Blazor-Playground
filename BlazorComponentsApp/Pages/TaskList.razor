@@ -1,19 +1,45 @@
-﻿@page "/tasklist"
+﻿<h3>@(Name)'s TaskList</h3>
 
-<h3>TaskList</h3>
+@if (taskItemList.Count > 0)
+{
+    <div class="progress my-2">
+        <div class="progress-bar" role="progressbar"
+             style="width: @(percentDone)%" aria-valuemin="0" aria-valuemax="100" >
+            @(percentDone)
+        </div>
+    </div>
+}
 
-<EditForm Model="@newTaskItem" OnValidSubmit="@AddNewTask" >
+<EditForm class="form-inline my-2"  Model="@newTaskItem" OnValidSubmit="@AddNewTask" >
+    <DataAnnotationsValidator />
+    <ValidationSummary />
 
-    <input type="text" @bind-value="newTaskItem.TaskTitle" />
+    <input class="form-control mx-2" type="text" @bind-value="newTaskItem.TaskTitle" />
 
-    <button type="submit" >Add Task</button>
+    <button type="submit" class="btn btn-outline-primary" >Add Task</button>
 
 </EditForm>
 
-<ul>
+<ul class="list-group">
     @foreach (var task in taskItemList)
     {
-        <li>@task.TaskTitle</li>
+        if (task.IsComplete)
+        {
+            <li class="list-group-item list-group-item-success my-1"
+                @onclick="(() => { task.IsComplete = !task.IsComplete; })">
+                <del>
+                    @task.TaskTitle
+                </del>
+            </li>
+        }
+        else
+        {
+            <li class="list-group-item list-group-item-secondary my-1"
+                @onclick="(() => { task.IsComplete = !task.IsComplete; })">
+                    @task.TaskTitle
+            </li>
+        }
+
     }
 </ul>
 
@@ -22,7 +48,18 @@
     private List<TaskItem> taskItemList = new List<TaskItem>();
     private TaskItem newTaskItem = new TaskItem();
 
-    private void AddNewTask() 
+    [Parameter]
+    public string Name { get; set; }
+
+    public int percentDone 
+    { 
+        get
+        {
+            return ((taskItemList.Count(x => x.IsComplete) * 100) / taskItemList.Count);
+        } 
+    }
+
+    private void AddNewTask()
     {
         taskItemList.Add(newTaskItem);
 
