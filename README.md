@@ -21,6 +21,7 @@ public class CounterBase : ComponentBase
 1. Extending from ComponentBase and inherited ```@inherits CounterBase``` into Counter.razor page
 1. Added Counter.razor as a Component into the Index.razor page
 1. Switched from HttpClient.GetFromJsonAsync() to HttpClient.GetAsync() with the use of System.Text.Json.JsonSerializer
+1. Blazor Client renders content in Client's Web Browser
 
 -----------------
 
@@ -45,14 +46,14 @@ https://www.youtube.com/watch?v=8DNgdphLvag
 ![BlazorServerApp Database Set up](https://raw.githubusercontent.com/UdaraAlwis/Blazor-Playground/master/Screenshots/BlazorServerApp/Database%20set%20up.png)
 
 #### Notes:
-You can mix and mingle ASP.NET Core UI Components and Css Style
+1. You can mix and mingle ASP.NET Core UI Components and Bootstrap Css Style
 ```html
 ...
 <InputText class="form-control" placeholder="First Name" 
 id="firstName" @bind-Value="_newPerson.FirstName" />
 ...
 ```
-Make sure to create a local Database and set up the following table
+1. Make sure to create a local Database and set up the following table
 ```sql
 CREATE TABLE [dbo].[People] (
     [Id]           INT          IDENTITY (1, 1) NOT NULL,
@@ -63,6 +64,7 @@ CREATE TABLE [dbo].[People] (
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 ```
+1. Blazor Server renders content in Server, and uses SignalR WebSockets to transfer data back and forth
     
 -----------------
 
