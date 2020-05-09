@@ -25,7 +25,7 @@ namespace DataAccessLibrary
         public Task InsertPerson(Person person)
         {
             string sql = @"insert into dbo.People (FirstName, LastName, EmailAddress)
-                         value (@FirstName, @LastName, @EmailAddress)";
+                         values (@FirstName, @LastName, @EmailAddress);";
 
             return _sqlDataAccess.SaveData<Person>(sql, person);
         }

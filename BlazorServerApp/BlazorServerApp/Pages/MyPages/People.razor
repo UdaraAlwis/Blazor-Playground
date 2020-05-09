@@ -2,18 +2,31 @@
 
 @using DataAccessLibrary
 @using DataAccessLibrary.Models
+@using BlazorServerApp.Models
 
 @inject IPeopleData _peopleData
 
 <h3>People Page</h3>
 
+<h4>Insert New Person</h4>
+<EditForm Model="@_newPerson" OnValidSubmit="InsertPerson">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <InputText id="firstName" @bind-Value="_newPerson.FirstName" />
+    <InputText id="lastName" @bind-Value="_newPerson.LastName" />
+    <InputText id="emailAddress" @bind-Value="_newPerson.EmailAddress" />
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</EditForm>
+
 <h4>Current People</h4>
-@if (people == null)
+@if (_people == null)
 {
-<p>
-    <div class="spinner-border"></div>
-    <em>Loading...</em>
-</p>
+    <p>
+        <div class="spinner-border"></div>
+        <em>Loading...</em>
+    </p>
 }
 else
 {
@@ -26,7 +39,7 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var person in people)
+            @foreach (var person in _people)
             {
                 <tr>
                     <td>@person.FirstName</td>
@@ -39,10 +52,27 @@ else
 }
 
 @code {
-    private List<Person> people;
+    private List<Person> _people;
+    private DisplayPerson _newPerson = new DisplayPerson();
 
     protected override async Task OnInitializedAsync()
     {
-        people = await _peopleData.GetPeople();
+        _people = await _peopleData.GetPeople();
+    }
+
+    private async Task InsertPerson()
+    {
+        Person p = new Person()
+        {
+            FirstName = _newPerson.FirstName,
+            LastName = _newPerson.LastName,
+            EmailAddress = _newPerson.EmailAddress,
+        };
+
+        await _peopleData.InsertPerson(p);
+
+        _people.Add(p);
+
+        _newPerson = new DisplayPerson();
     }
 }
