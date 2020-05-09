@@ -35,6 +35,13 @@ https://docs.microsoft.com/en-us/aspnet/core/tutorials/build-your-first-blazor-a
 https://www.youtube.com/watch?v=CaxR4_fP-FA
 > Project /BlazorPersonApp
 
+![BlazorPersonApp Screenshot](https://raw.githubusercontent.com/UdaraAlwis/Blazor-Playground/master/Screenshots/BlazorPersonApp/Finished.png)
+
+#### Notes:
+1. ASP.NET Hosted Blazor Client App solution was created.
+1. Added a PersonController API endpoint in the BlazorPersonApp.Server project
+1. Implemented Get and Post endpoints in the PersonController and implemented calls to pull data for the Client App
+
 -----------------
 
 ### Intro to Blazor Server Side - Includes SQL Data Access and Best Practices
@@ -65,6 +72,7 @@ CREATE TABLE [dbo].[People] (
 );
 ```
 1. Blazor Server renders content in Server, and uses SignalR WebSockets to transfer data back and forth
+1. How to identify Blazor Server project? in the Startup.cs look for ```services.AddServerSideBlazor();```
     
 -----------------
 
