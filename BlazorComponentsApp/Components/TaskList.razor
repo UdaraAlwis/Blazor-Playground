@@ -1,11 +1,11 @@
-﻿<h3>@(Name)'s TaskList</h3>
+﻿<h3>@(Name)'s Task List</h3>
 
 @if (taskItemList.Count > 0)
 {
     <div class="progress my-2">
         <div class="progress-bar" role="progressbar"
              style="width: @(percentDone)%" aria-valuemin="0" aria-valuemax="100" >
-            @(percentDone)
+            @(percentDone)%
         </div>
     </div>
 }

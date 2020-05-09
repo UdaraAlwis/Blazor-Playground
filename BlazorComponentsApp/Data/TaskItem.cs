@@ -8,7 +8,7 @@ namespace BlazorComponentsApp.Data
 {
     public class TaskItem
     {
-        [Required]
+        [Required(ErrorMessage = "Task Title required.")]
         public string TaskTitle { get; set; }
         public bool IsComplete { get; set; }
     }

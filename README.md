@@ -94,7 +94,15 @@ CREATE TABLE [dbo].[People] (
 
 ### Blazor Server Components - Making Razor Components Easy to Use
 https://www.youtube.com/watch?v=JE0tQ4tx0Nc
-> pending...
+> Project /BlazorComponentsApp
+
+![BlazorComponentsApp Screenshot](https://raw.githubusercontent.com/UdaraAlwis/Blazor-Playground/master/Screenshots/BlazorComponentsApp/Finished.png)
+
+#### Notes:
+1. Created the simple TaskList Component and reused it multiple times in a single page
+2. You can use multiple Components in a single page
+3. You can also Nest components within each other
+4. Remove ```@page "/TaskList"``` so it can't be used as a page
 
 -----------------
 
