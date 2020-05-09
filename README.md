@@ -5,7 +5,7 @@ Me myself and I playing around with Blazor tid bits...
 https://docs.microsoft.com/en-us/aspnet/core/blazor/get-started?view=aspnetcore-3.1&tabs=visual-studio
 > Project /BlazorClientApp
 
-![BlazorClientApp Screenshot](https://raw.githubusercontent.com/UdaraAlwis/Blazor-Playground/blob/master/Screenshots/BlazorClientApp/Finished.png)
+![BlazorClientApp Screenshot](https://raw.githubusercontent.com/UdaraAlwis/Blazor-Playground/master/Screenshots/BlazorClientApp/Finished.png)
 
 #### Notes:
 1. Splitting Counter.razor file with the Counter.razor.cs code behind implementation. 
