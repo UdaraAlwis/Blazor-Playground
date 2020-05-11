@@ -22,6 +22,8 @@ public class CounterBase : ComponentBase
 3. Added Counter.razor as a Component into the Index.razor page
 4. Switched from ```HttpClient.GetFromJsonAsync()``` to ```HttpClient.GetAsync()``` with the use of System.Text.Json.JsonSerializer
 5. Blazor Client renders content in Client's Web Browser
+6. Blazor Client Apps = Blazor WebAssembly Apps
+7. Blazor Client Apps cannot directly debug in Visual Studio
 
 -----------------
 
@@ -88,7 +90,8 @@ CREATE TABLE [dbo].[People] (
 );
 ```
 4. Blazor Server renders content in Server, and uses SignalR WebSockets to transfer data back and forth
-5. How to identify Blazor Server project? in the Startup.cs look for ```services.AddServerSideBlazor();```
+5. Blazor Server Apps can directly debug in Visual Studio
+6. How to identify Blazor Server project? in the Startup.cs look for ```services.AddServerSideBlazor();```
     
 -----------------
 
@@ -108,6 +111,6 @@ https://www.youtube.com/watch?v=JE0tQ4tx0Nc
 
 ### Blazor - app building workshop
 https://github.com/dotnet-presentations/blazor-workshop/
-> pending...
+> /BlazingPizzaApp
 
 
