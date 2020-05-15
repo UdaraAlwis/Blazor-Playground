@@ -1,0 +1,51 @@
+﻿@page "/myorders/{orderId:int}"
+@using System.Threading
+@inject HttpClient HttpClient
+
+
+<div class="main">
+    TODO: Show details from @OrderId
+</div>
+
+@code {
+
+    [Parameter]
+    public int OrderId { get; set; }
+
+    OrderWithStatus orderWithStatus;
+    bool invalidOrder;
+    CancellationTokenSource pollingCancellationToken;
+
+    protected override Task OnParametersSetAsync()
+    {
+        // If we were already polling for a different order, stop doing so
+        pollingCancellationToken?.Cancel();
+
+        // Start a new poll loop
+        PollForUpdates();
+    }
+
+    private async void PollForUpdates()
+    {
+        pollingCancellationToken = new CancellationTokenSource();
+        while (!pollingCancellationToken.IsCancellationRequested)
+        {
+            try
+            {
+                invalidOrder = false;
+                orderWithStatus = await HttpClient.GetFromJsonAsync<OrderWithStatus>($"orders/{OrderId}");
+            }
+            catch (Exception ex)
+            {
+                invalidOrder = false;
+                pollingCancellationToken.Cancel();
+                Console.Error.WriteLine(ex);
+            }
+
+            StateHasChanged();
+
+            await Task.Delay(4000);
+        }
+    }
+
+}
