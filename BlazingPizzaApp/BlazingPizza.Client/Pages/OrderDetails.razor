@@ -1,6 +1,10 @@
 ﻿@page "/myorders/{orderId:int}"
+
+@attribute [Authorize]
 @using System.Threading
 @inject HttpClient HttpClient
+@inject NavigationManager NavigationManager
+@inject IAccessTokenProvider TokenProvider
 @implements IDisposable
 
 <div class="main">
@@ -10,7 +14,7 @@
         <h2>Nope</h2>
         <p>Sorry, this order could not be loaded.</p>
     }
-    else if(orderWithStatus == null)
+    else if (orderWithStatus == null)
     {
         <text>Loading...</text>
     }
@@ -55,24 +59,35 @@
 
     private async void PollForUpdates()
     {
-        pollingCancellationToken = new CancellationTokenSource();
-        while (!pollingCancellationToken.IsCancellationRequested)
+        var tokenResult = await TokenProvider.RequestAccessToken();
+        if (tokenResult.TryGetToken(out var accessToken))
         {
-            try
+            pollingCancellationToken = new CancellationTokenSource();
+            while (!pollingCancellationToken.IsCancellationRequested)
             {
-                invalidOrder = false;
-                orderWithStatus = await HttpClient.GetFromJsonAsync<OrderWithStatus>($"orders/{OrderId}");
-            }
-            catch (Exception ex)
-            {
-                invalidOrder = false;
-                pollingCancellationToken.Cancel();
-                Console.Error.WriteLine(ex);
-            }
+                try
+                {
+                    invalidOrder = false;
+                    var request = new HttpRequestMessage(HttpMethod.Get, $"orders/{OrderId}");
+                    request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken.Value);
+                    var response = await HttpClient.SendAsync(request);
+                    orderWithStatus = await response.Content.ReadFromJsonAsync<OrderWithStatus>();
+                }
+                catch (Exception ex)
+                {
+                    invalidOrder = true;
+                    pollingCancellationToken.Cancel();
+                    Console.Error.WriteLine(ex);
+                }
 
-            StateHasChanged();
+                StateHasChanged();
 
-            await Task.Delay(4000);
+                await Task.Delay(4000);
+            }
+        }
+        else
+        {
+            NavigationManager.NavigateTo(tokenResult.RedirectUrl);
         }
     }
 
