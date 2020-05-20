@@ -3,7 +3,7 @@
         <Found>
             <AuthorizeRouteView RouteData="routeData" DefaultLayout="typeof(MainLayout)" >
                 <NotAuthorized>
-                    <p>You are not authorized to access this resource.</p>
+                    <RedirectToLogin />
                 </NotAuthorized>   
                 <Authorizing>
                     <div class="main">Please wait...</div>
