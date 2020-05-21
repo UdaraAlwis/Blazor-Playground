@@ -34,6 +34,9 @@
                 <div class="track-order-details">
                     <OrderReview Order="@orderWithStatus.Order" />
                 </div>
+                <div class="track-order-map">
+                    <Map Zoom="13" Markers="orderWithStatus.MapMarkers" ></Map>
+                </div>
             </div>
         </div>
     }
