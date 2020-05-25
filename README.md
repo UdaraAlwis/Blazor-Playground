@@ -1,5 +1,5 @@
 # Blazor-Playground
-Me, myself and I playing around and continusouly learning with Blazor tid bits...
+Me, myself and I playing around and continusouly learning with Blazor tid bits... for the love of learning and building kickass stuff with .NET platform! ;)
 
 ### Get started with ASP.NET Core Blazor
 https://docs.microsoft.com/en-us/aspnet/core/blazor/get-started?view=aspnetcore-3.1&tabs=visual-studio
