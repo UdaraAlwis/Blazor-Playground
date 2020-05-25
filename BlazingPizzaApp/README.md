@@ -1,4 +1,4 @@
-# BlazingPizzaApp, the Blazor Workshope
+# BlazingPizzaApp, the Blazor Workshop
 This is me building the BlazingPizzaApp workshop project, for self learning Blazor.
 https://github.com/dotnet-presentations/blazor-workshop/
 
