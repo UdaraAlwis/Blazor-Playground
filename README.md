@@ -117,26 +117,23 @@ https://github.com/dotnet-presentations/blazor-workshop/
 
 #### Notes:
 1. The most comprehensive end to end blazor self learning experience ever!
-2. Its much easier to build UIs with Components, defining them separately and putting them together as building blocks to form a page
-3. NavigationManager allows you to programmatically Navigate in your Blazor app.
+2. Its betetr to build Page UIs with separate Components put together.
+3. ```NavigationManager``` allows you to programmatically Navigate in your Blazor app.
 4. Save the state of a page in the DI container ```builder.Services.AddScoped<OrderState>();```
 5. Saving the state will help you retain data during page navigation
 6. Using Annotations on the data model you can easily implement Server side data validation
-7. Using EditForm, you implement client side data validation
+7. Using ```EditForm```, you implement client side data validation
 8. A nicer way to display input data field validation is by using ValidationMessage.
 9. ```[Authorize]``` on the API Controller, to enforce Authorization for all incoming calls.
 10. Enable the authentication services, add a call to AddApiAuthorization in Program.cs  
-11. RemoteAuthenticatorView component orchestrates the authentication flow.
-12. CascadingAuthenticationState wraps to let you inherit auth state to child elements.
-13. AuthorizeView  will let you control displaying of elements based on auth state.
-14. Use the IAccessTokenProvider injected to the pages for aquire AccessTokens.
-15. AuthenticationStateTask lets you check programmatically if the user is logged in or not.
-16. AuthorizeRouteView controls the direct access to routes based on auth state
-17. Redirecting will make you lose state, but you can preserve state by implementing RemoteAuthenticationState
+11. ```RemoteAuthenticatorView``` component orchestrates the authentication flow.
+12. ```CascadingAuthenticationState``` wraps to let you inherit auth state to child elements.
+13. ```AuthorizeView```  will let you control displaying of elements based on auth state.
+14. Use the ```IAccessTokenProvider``` injected to the pages for aquire AccessTokens.
+15. ```AuthenticationStateTask``` lets you check programmatically if the user is logged in or not.
+16. ```AuthorizeRouteView``` controls the direct access to routes based on auth state
+17. Redirecting will make you lose state, but you can preserve state by implementing ```RemoteAuthenticationState```.
 18. 
-
-3. You can also Nest components within each other
-4. Remove ```@page "/TaskList"``` so it can't be used as a page
 
 -----------------
 
