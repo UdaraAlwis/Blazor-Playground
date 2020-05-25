@@ -32,6 +32,10 @@ Completed and Published: https://blazingpizzaappudara.azurewebsites.net
 23. To Publish to Azure, you need to create an ```App Service``` and ```Hosting Plan``` of Basic tier or higher.
 24. Finally you need to set up a signing key with ```Azure Key Vault``` for the IdentityServer.
 
+![BlazingPizzaApp Screenshot](https://raw.githubusercontent.com/UdaraAlwis/Blazor-Playground/master/BlazingPizzaApp/Screenshots/2%20Finished%20Project%20Solution.png)
+
+![BlazingPizzaApp Screenshot](https://raw.githubusercontent.com/UdaraAlwis/Blazor-Playground/master/BlazingPizzaApp/Screenshots/2%20Publish%20to%20Azure.png)
+
 ![BlazingPizzaApp Screenshot](https://raw.githubusercontent.com/UdaraAlwis/Blazor-Playground/master/BlazingPizzaApp/Screenshots/2%20Web%20App.png)
 
 ![BlazingPizzaApp Screenshot](https://raw.githubusercontent.com/UdaraAlwis/Blazor-Playground/master/BlazingPizzaApp/Screenshots/3%20Web%20App%20Registration.png)
@@ -47,6 +51,4 @@ Completed and Published: https://blazingpizzaappudara.azurewebsites.net
 ![BlazingPizzaApp Screenshot](https://raw.githubusercontent.com/UdaraAlwis/Blazor-Playground/master/BlazingPizzaApp/Screenshots/8%20Web%20App%20Order%20Details.png)
 
 ![BlazingPizzaApp Screenshot](https://raw.githubusercontent.com/UdaraAlwis/Blazor-Playground/master/BlazingPizzaApp/Screenshots/9%20Web%20App%20Order%20List.png)
-
-![BlazingPizzaApp Screenshot](https://raw.githubusercontent.com/UdaraAlwis/Blazor-Playground/master/BlazingPizzaApp/Screenshots/10%20Publish%20to%20Azure.png)
 
