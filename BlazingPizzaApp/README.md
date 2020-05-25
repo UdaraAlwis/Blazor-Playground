@@ -34,24 +34,19 @@ Completed and Published: https://blazingpizzaappudara.azurewebsites.net
 
 ![BlazingPizzaApp Screenshot](https://raw.githubusercontent.com/UdaraAlwis/Blazor-Playground/master/BlazingPizzaApp/Screenshots/2%20Web%20App.png)
 
-![BlazingPizzaApp Screenshot]()
+![BlazingPizzaApp Screenshot](https://raw.githubusercontent.com/UdaraAlwis/Blazor-Playground/master/BlazingPizzaApp/Screenshots/3%20Web%20App%20Registration.png)
 
-![BlazingPizzaApp Screenshot]()
+![BlazingPizzaApp Screenshot](https://raw.githubusercontent.com/UdaraAlwis/Blazor-Playground/master/BlazingPizzaApp/Screenshots/4%20Web%20App%20Login.png)
 
-![BlazingPizzaApp Screenshot]()
+![BlazingPizzaApp Screenshot](https://raw.githubusercontent.com/UdaraAlwis/Blazor-Playground/master/BlazingPizzaApp/Screenshots/5%20Web%20App%20Configure%20Pizza.png)
 
-![BlazingPizzaApp Screenshot]()
+![BlazingPizzaApp Screenshot](https://raw.githubusercontent.com/UdaraAlwis/Blazor-Playground/master/BlazingPizzaApp/Screenshots/6%20Web%20App%20Add%20To%20Order.png)
 
-![BlazingPizzaApp Screenshot]()
+![BlazingPizzaApp Screenshot](https://raw.githubusercontent.com/UdaraAlwis/Blazor-Playground/master/BlazingPizzaApp/Screenshots/7%20Web%20App%20Place%20Order.png)
 
-![BlazingPizzaApp Screenshot]()
+![BlazingPizzaApp Screenshot](https://raw.githubusercontent.com/UdaraAlwis/Blazor-Playground/master/BlazingPizzaApp/Screenshots/8%20Web%20App%20Order%20Details.png)
 
-![BlazingPizzaApp Screenshot]()
-
-
-
-
-
+![BlazingPizzaApp Screenshot](https://raw.githubusercontent.com/UdaraAlwis/Blazor-Playground/master/BlazingPizzaApp/Screenshots/9%20Web%20App%20Order%20List.png)
 
 ![BlazingPizzaApp Screenshot](https://raw.githubusercontent.com/UdaraAlwis/Blazor-Playground/master/BlazingPizzaApp/Screenshots/10%20Publish%20to%20Azure.png)
 
