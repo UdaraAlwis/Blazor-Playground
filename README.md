@@ -113,4 +113,7 @@ https://www.youtube.com/watch?v=JE0tQ4tx0Nc
 https://github.com/dotnet-presentations/blazor-workshop/
 > /BlazingPizzaApp
 
+![BlazingPizzaApp Screenshot](https://raw.githubusercontent.com/UdaraAlwis/Blazor-Playground/master/Screenshots/BlazingPizzaApp/Finished.png)
+
+
 
